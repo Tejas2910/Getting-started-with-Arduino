@@ -18,5 +18,7 @@ void loop()
 }
 ```       
 Let's break down this code line by line
+
 `#define LED_PIN 12` 
+
 Define variable name LED_PIN and pin number it represents pin number 12
