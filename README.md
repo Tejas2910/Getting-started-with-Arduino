@@ -43,4 +43,7 @@ void loop()
 }
 ```
 `void loop()` : This function is executed again and again, until you power off the Arduino.
+
 `digitalWrite(Pin number, State)` : Represent state (HIGH or LOW) of pin.
+
+`delay()` : function will block the program for a given amount of time (in milliseconds).
