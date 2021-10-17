@@ -34,3 +34,13 @@ void setup()
 Before we can actually use a digital pin, we need to set a mode. Basically you have 2 modes: output (if you want to control a component), or input (if you want to read some information from a component). Here, we want to control the LED, so we choose output.
 
 Here, digital pin 12 will be set as output, and we can control the LED.
+```
+void loop()
+{
+  digitalWrite(LED_PIN, HIGH);
+  delay(500);
+  digitalWrite(LED_PIN, LOW);
+  delay(500); 
+}
+```
+``void loop()`` and this function will be executed again and again, until you power off the Arduino.
