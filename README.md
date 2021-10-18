@@ -147,4 +147,34 @@ void loop() {
   digitalWrite(LED_PIN, ledState);
 }
 ```
+We initialize the pin of the LED as OUTPUT and the pin of the button as INPUT. In the if loop() we monitor the button state and modify the LED state accordingly. When the button is pressed ledstate gets changed.
+
+### Part 2
+```
+#define BUTTON_PIN 3
+
+volatile bool shouldMoveMotor = false;
+
+void setup() {
+  pinMode(BUTTON_PIN, INPUT);
+  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), triggerMoveMotor, RISING);
+}
+
+void loop() {
+  if (shouldMoveMotor) {
+    shouldMoveMotor = false;
+    moveMotor();
+  }
+}
+
+void triggerMoveMotor() {
+  shouldMoveMotor = true;
+}
+
+void moveMotor() {
+  // this function may contains code that
+  // requires heavy computation, or takes
+  // a long time to execute
+}
+```
 
