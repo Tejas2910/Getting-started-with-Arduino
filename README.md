@@ -151,30 +151,28 @@ We initialize the pin of the LED as OUTPUT and the pin of the button as INPUT. I
 
 ### Part 2
 ```
+#define LED_PIN 9
 #define BUTTON_PIN 3
 
-volatile bool shouldMoveMotor = false;
+volatile byte ledState = LOW;
 
 void setup() {
+  pinMode(LED_PIN, OUTPUT);
   pinMode(BUTTON_PIN, INPUT);
-  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), triggerMoveMotor, RISING);
+
+  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), blinkLed, RISING);
 }
 
 void loop() {
-  if (shouldMoveMotor) {
-    shouldMoveMotor = false;
-    moveMotor();
-  }
+  digitalWrite(LED_PIN, ledState);
 }
 
-void triggerMoveMotor() {
-  shouldMoveMotor = true;
-}
-
-void moveMotor() {
-  // this function may contains code that
-  // requires heavy computation, or takes
-  // a long time to execute
+void blinkLed() {
+  ledState = !ledState;
 }
 ```
+`attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), blinkLed, RISING);` : When the signal on the button pin is rising – which means that push button is pressed, the current program execution – loop() function – will be stopped and the blinkLed() function will be called. Once blinkLed() has finished, the loop() can continue.
 
+` attachInterrupt();` : This function takes 3 parameters: the interrupt pin, the function to call, and the type of interrupt.
+
+`volatile byte ledState = LOW;` : variable is defined as volatile as it is used both inside and outside the interrupt function.
