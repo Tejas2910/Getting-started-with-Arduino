@@ -124,3 +124,27 @@ i = 1;
 }` : Loop will be execute again and again till we type on serial monitor.
 
 `numblinks = Serial.parseInt();` : Takes the input we type in serial monitor.
+
+## Example 5 
+### Part 1
+Arduino code without interrupts 
+```
+#define LED_PIN 9
+#define BUTTON_PIN 3
+
+byte ledState = LOW;
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT);
+}
+
+void loop() {
+  if (digitalRead(BUTTON_PIN), HIGH) {
+    ledState = !ledState;
+  }
+
+  digitalWrite(LED_PIN, ledState);
+}
+```
+
