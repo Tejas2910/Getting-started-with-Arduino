@@ -91,3 +91,36 @@ delay(wait);
 `Serial.begin(9600);` : The argument is no. of bytes per second and usually is taken as 9600.
 
 `Serial.println(j);` : print on next line.
+
+## Exmaple 4
+```
+int numblinks;
+int wait = 500;
+int LED_pin = 12;
+int i ;
+String msg ="Howm many times LED should blink"; 
+
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+Serial.println(msg);
+while(Serial.available()==0){
+}
+numblinks = Serial.parseInt();
+for(i=1;i<=numblinks;i++){
+  digitalWrite(LED_pin, HIGH);
+  delay(wait);
+  digitalWrite(LED_pin, LOW);
+  delay(wait);
+}
+i = 1;
+}
+```
+`while(Serial.available()==0){
+}` : Loop will be execute again and again till we type on serial monitor.
+
+`numblinks = Serial.parseInt();` : Takes the input we type in serial monitor.
