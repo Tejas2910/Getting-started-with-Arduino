@@ -89,4 +89,5 @@ delay(wait);
 }
 ```
 `Serial.begin(9600);` : The argument is no. of bytes per second and usually is taken as 9600.
-`Serial.println(j);` : print on next line 
+
+`Serial.println(j);` : print on next line.
