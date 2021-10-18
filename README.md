@@ -30,6 +30,7 @@ void setup()
 }
 ```
  `void setup()`: This function is executed once at the beginning of the program.
+ 
  `pinMode(Pin number, Mode)` : Before we can actually use a digital pin, we need to set a mode. Basically you have 2 modes: output (if you want to control a component), or input (if you want to read some information from a component). Here, we want to control the LED, so we choose output.
 
 Here, digital pin 12 will be set as output, and we can control the LED.
@@ -47,3 +48,26 @@ void loop()
 `digitalWrite(Pin number, State)` : Represent state (HIGH or LOW) of pin.
 
 `delay()` : function will block the program for a given amount of time (in milliseconds).
+
+### Example 2
+```
+#define LED_PIN 11
+
+void setup()
+{
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop()
+{
+  for (int i = 0; i <= 255; i++) {
+    analogWrite(LED_PIN, i);
+    delay(10);
+  }
+  
+  for (int i = 255; i >= 0; i--) {
+    analogWrite(LED_PIN, i);
+    delay(10);
+  }
+}
+```
