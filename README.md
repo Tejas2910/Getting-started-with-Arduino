@@ -1,6 +1,6 @@
 # Getting-started-with-Arduino
 
-### Example 1
+## Example 1
 ```     
 #define LED_PIN 12
 
@@ -49,7 +49,7 @@ void loop()
 
 `delay()` : function will block the program for a given amount of time (in milliseconds).
 
-### Example 2
+## Example 2
 ```
 #define LED_PIN 11
 
