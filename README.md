@@ -88,7 +88,7 @@ j = j+1;
 delay(wait);
 }
 ```
-`Serial.begin(9600);` : Begin the serial data transmission at the rate of 9600 bits per second.
+`Serial.begin(9600);` : Begin the serial data transmission at the rate of 9600 bits per second. (`Serial.begin(baud rate);`)
 
 `Serial.println(j);` : print on next line.
 
