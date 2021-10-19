@@ -1,5 +1,5 @@
 # Getting-started-with-Arduino
-## Refer this Doc : 
+## Refer this Doc : [Getting Started with Arduino](https://docs.google.com/document/d/1qEkcAV4BKS4X7z_keu1N7uFxlFbaFj7DF-xumzHQLIo/edit)
 ## Example 1
 ```     
 #define LED_PIN 12
@@ -88,7 +88,7 @@ j = j+1;
 delay(wait);
 }
 ```
-`Serial.begin(9600);` : Begin the serial data transmission at the rate of 9600 bits per second. (`Serial.begin(baud rate);`)
+`Serial.begin(9600);` : Begin the serial data transmission at the rate of 9600 bits per second.
 
 `Serial.println(j);` : print on next line.
 
